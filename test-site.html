@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autotek</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Almarai:wght@400;700;800&family=Tajawal:wght@300;400;500;700&display=swap"
+    rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <div class="wrap">
+      <nav>
+        
+        <!-- <ul class="nav-links" id="navLinks">
+          <li><a href="#section-1" class="active">links</a></li>
+          <li><a href="#section-2">links</a></li>
+          <li><a href="#section-3">links</a></li>
+          <li><a href="#section-4">links</a></li>
+        </ul> -->
+       <div class="image-nav">
+        <img class="logo" src="image/Screenshot_2026-09-10_183103-removebg-preview.png" alt="Autotek">
+       </div>
+          
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- Section 1 -->
+    <section class="feature-section" id="section-1">
+      <div class="wrap">
+        <div class="flex-head">
+          <div class="text-col">
+
+            <span class="eyebrow">PAINT PROTECTION FILM</span>
+            <div class="verified">
+            <i class="fa-regular fa-square-check"></i>
+            <span>Verified</span>
+          </div>
+            <h2><span class="tek-p">TEK</span> PRIME 10</h2>
+            <p class="lede">Heavy duty defense. Our resilient paint protection film is ideal for high-impact areas and
+              environments, such as industrial work sites, off-road adventures, and track cars. TEK PRIME 10 is
+              designed to provide maximum durability and impact resistance.
+
+            </p>
+            <a href="#" class="btn">Show Warranty 
+              Certificate</a>
+            <div class="points">
+              <div class="point">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+                <div>
+                  <h4>Maximum Thickness</h4>
+                  <p>Offers the highest level of protection against severe impacts, ensuring your vehicle’s surfaces
+                    stay intact and unscathed.</p>
+                </div>
+              </div>
+              <div class="point">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+                <div>
+                  <h4>Maximum Thickness</h4>
+                  <p>Offers the highest level of protection against severe impacts, ensuring your vehicle’s surfaces
+                    stay intact and unscathed.</p>
+                </div>
+              </div>
+              <div class="point">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+                <div>
+                  <h4>Self-Healing</h4>
+                  <p>Protects against and repairs impacts from rocks, debris, and other hazards, preventing damage to
+                    your vehicle’s paint.</p>
+                </div>
+              </div>
+              <div class="point">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="9" />
+                </svg>
+                <div>
+                  <h4>Extended Lifespan</h4>
+                  <p>Provides long-term protection and maintains a flawless appearance, reducing the need for frequent
+                    repairs and touch-ups.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="image-col">
+            <img src="image/WhatsApp Image 2026-09-17 at 12.56.27 PM.png" alt="">
+            <img src="image/WhatsApp Image 2026-09-17 at 12.56.27 PM (1).png" alt="">
+          </div>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Popup للصورة -->
+<div class="image-popup" id="imagePopup">
+  <div class="popup-overlay" id="popupOverlay"></div>
+  <div class="popup-box">
+    <button class="popup-close" id="popupClose">×</button>
+    
+    <!-- مكان الصورة - حط صورتك هنا -->
+    <div class="popup-image">
+      <img src="image/WhatsApp_Image_2026-09-17_at_3.00.42_PM-removebg-preview.png" alt="TEK PRIME 10">
+      <!-- لو لسه ما عندكش صورة، سيب السطر ده فاضي أو حط placeholder -->
+    </div>
+  </div>
+</div>
+
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>Designed by <strong>Pixel Path</strong></p>
+    </div>
+  </footer>
+
+  <script>
+  // ========== Mobile Nav (محمي من الخطأ) ==========
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      var open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        links.querySelectorAll('a').forEach(function (x) {
+          x.classList.remove('active');
+        });
+        a.classList.add('active');
+      });
+    });
+  }
+
+  // ========== Highlight active section ==========
+  var sections = document.querySelectorAll('main section[id]');
+  var navAnchors = links ? links.querySelectorAll('a') : [];
+  
+  if (navAnchors.length > 0) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          navAnchors.forEach(function (a) {
+            a.classList.remove('active');
+          });
+          var match = links.querySelector('a[href="#' + entry.target.id + '"]');
+          if (match) match.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    sections.forEach(function (s) {
+      observer.observe(s);
+    });
+  }
+
+  // ========== Image Popup ==========
+  document.addEventListener('DOMContentLoaded', function () {
+    const popup = document.getElementById('imagePopup');
+    const overlay = document.getElementById('popupOverlay');
+    const closeBtn = document.getElementById('popupClose');
+    const openBtn = document.querySelector('.feature-section .btn');
+
+    if (!popup || !openBtn) {
+      console.log('Popup elements not found');
+      return;
+    }
+
+    // فتح الـ Popup
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      popup.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    });
+
+    // قفل الـ Popup
+    function closePopup() {
+      popup.classList.remove('show');
+      document.body.style.overflow = '';
+    }
+
+    if (closeBtn) closeBtn.addEventListener('click', closePopup);
+    if (overlay) overlay.addEventListener('click', closePopup);
+
+    // قفل بـ ESC
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && popup.classList.contains('show')) {
+        closePopup();
+      }
+    });
+  });
+  </script>
+
+</body>
+
+</html>
